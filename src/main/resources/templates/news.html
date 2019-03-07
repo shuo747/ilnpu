@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: header}">
+</head>
+<body>
+<div class="container">
+    <div class="card" th:each="news : ${news}">
+        <header class="card-header">
+            <p class="card-header-title"
+                th:text="${news.title}">
+            </p>
+            <p class="card-header-icon" th:text="${news.time}">
+
+            </p>
+        </header>
+
+        <div th:utext="${news.artical}"></div>
+        </iframe>
+
+    </div>
+</div>
+</body>
+
+<footer th:replace="~{fragments/footer :: footer}">
+</footer>
+
+</html>

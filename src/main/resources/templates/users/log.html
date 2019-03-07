@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: header}">
+</head>
+<body>
+<div class="container">
+    <div class="card" th:each="log : ${log}">
+        <header class="card-header">
+            <p class="card-header-title"
+                th:text="${log.date}">
+            </p>
+            <p class="card-header-icon" th:text="${log.status}">
+
+            </p>
+        </header>
+
+        <div class="card-content">
+            <p class="content" th:text="${log.value}"></p>
+        </div>
+
+
+
+    </div>
+</div>
+</body>
+
+<footer th:replace="~{fragments/footer :: footer}">
+</footer>
+
+</html>

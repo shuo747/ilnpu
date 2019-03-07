@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{fragments/header :: header}">
+</head>
+<body>
+<div class="box" align="center">
+
+    <!--<p class="title is-5 is-spaced" th:text="${'共'+stu.size()+'人'}"></p>-->
+    <table class="table is-bordered is-striped is-narrow is-hoverable">
+        <thead>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>学院</th>
+            <th>专业</th>
+            <th>性别</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>学院</th>
+            <th>专业</th>
+            <th>性别</th>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr th:each="stu : ${stu}">
+                <td ><a th:href="@{'/users/s/'+${stu.sid}}" th:text="${stu.sid}"></a></td>
+                <td th:text="${stu.name}"></td>
+                <td th:text="${stu.college}"></td>
+                <td th:text="${stu.major}"></td>
+                <td th:text="${stu.sex}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+
+<footer th:replace="~{fragments/footer :: footer}">
+</footer>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="~{fragments/header :: header}">
+</head>
+<body>
+
+<!-- Page content -->
+<div class="container blog-content-container">
+
+    <div class="columns main" >
+        <div class="column is-4 is-offset-4">
+            <div class="box">
+            <form th:action="@{/login}" method="post">
+
+
+                <div class="field">
+                    <p class="title is-3 has-text-centered">登录</p>
+                    <label class="label">Username</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="用户名" id="username" name="username" value="shuo">
+
+                    </div>
+                    <!--<p class="help is-success">This username is OK</p>-->
+                </div>
+
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input class="input" type="password" placeholder="密码" id="password" name="password" value="">
+                    </div>
+                    <!--<p class="help is-success">This Password is OK</p>-->
+                </div>
+
+                <div class="control">
+                    <button type="submit" class="button is-primary">登录</button>
+                </div>
+
+                <div class=" col-md-5" th:if="${loginError}">
+                    <p class="blog-label-error" th:text="${errorMsg}"></p>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div><!-- /.container -->
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
